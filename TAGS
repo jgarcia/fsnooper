@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ArgumentsParser	lib/arguments_parser.rb	/^module ArgumentsParser$/;"	m
+DirectoryWatcher	lib/directory_watcher.rb	/^class DirectoryWatcher$/;"	c
+FSnooper	lib/fsnooper.rb	/^class FSnooper$/;"	c
+execute_commands	lib/fsnooper.rb	/^	def execute_commands$/;"	f	class:FSnooper
+initialize	lib/directory_watcher.rb	/^	def initialize(target_directories)$/;"	f	class:DirectoryWatcher
+initialize	lib/fsnooper.rb	/^	def initialize(args)$/;"	f	class:FSnooper
+mock_directory_watcher	spec/fsnooper_spec.rb	/^		def mock_directory_watcher(stubs={})$/;"	f
+parse	lib/arguments_parser.rb	/^	def parse$/;"	f	class:ArgumentsParser
+run	lib/fsnooper.rb	/^	def run$/;"	f	class:FSnooper
+scan_target_directories	lib/directory_watcher.rb	/^	def scan_target_directories$/;"	f	class:DirectoryWatcher
+targets_changed?	lib/directory_watcher.rb	/^	def targets_changed?$/;"	f	class:DirectoryWatcher
+watch	lib/directory_watcher.rb	/^	def watch$/;"	f	class:DirectoryWatcher
