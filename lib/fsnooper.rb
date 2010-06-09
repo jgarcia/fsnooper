@@ -1,3 +1,5 @@
+require 'directory_watcher'
+
 class FSnooper
 	
 	attr_accessor :commands, :target_directories
@@ -17,7 +19,7 @@ class FSnooper
 	
 	def execute_commands
 		self.commands.each do |command|
-			#system(command)
+			system(command)
 		end
 	end
 
