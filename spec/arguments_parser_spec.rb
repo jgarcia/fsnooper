@@ -17,6 +17,14 @@ describe ArgumentsParser do
 			@result = ArgumentsParser.parse('-d', @args)
 			@result.should == ['lib', 'spec']
 		end
+
+		it "handles consecutive calls using the same array" do
+			args2 = ['-c', 'echo "hello world"', '-d', 'test-files/']
+			r1 = ArgumentsParser.parse('-c', args2)
+			r2 = ArgumentsParser.parse('-d', args2)
+			r1.should == ['echo "hello world"']
+			r2.should == ['test-files/']
+		end
 	end
 
 end

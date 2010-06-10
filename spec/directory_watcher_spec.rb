@@ -14,9 +14,24 @@ describe DirectoryWatcher do
 			@directory_watcher.target_directories.should == @args
 		end
 
+		it "sets targets changed to false the first time it is run" do
+			@directory_watcher = DirectoryWatcher.new @args
+			@directory_watcher.targets_changed?.should == false
+		end
+
 	end
 
 	describe :watch do
+
+		context "Running for the first time" do 
+			
+			it "targets changed returns false after the first initialize method" do
+				@watcher = DirectoryWatcher.new @args
+				@watcher.watch
+				@watcher.targets_changed?.should == false
+			end
+
+		end
 
 		context "Adding new files and folders" do
 			
@@ -48,13 +63,14 @@ describe DirectoryWatcher do
 				watcher = DirectoryWatcher.new @args
 				system('touch test-files/some_file.rb')
 				watcher.watch
+				sleep 1
 				system('touch test-files/some_file.rb')
 				watcher.watch
 				watcher.targets_changed?.should == true
 			end
 
 		end
-			
+
 	end
 
 end

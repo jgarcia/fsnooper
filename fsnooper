@@ -1,20 +1,21 @@
 #!/usr/bin/env ruby -w
 
-require 'arguments_parser'
-require 'directory_watcher'
-require 'fsnooper'
+require 'lib/arguments_parser'
+require 'lib/directory_watcher'
+require 'lib/fsnooper'
 
 if __FILE__ != nil
 	
 	trap('INT') do
 		puts '\nQuitting...'
+		exit
 	end
 
 	@fsnooper = FSnooper.new ARGV
 
 	loop do
-		@fsnooper run
-		sleep 1
+		@fsnooper.run
+		sleep 3
 	end
 
 end

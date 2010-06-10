@@ -4,7 +4,7 @@ module ArgumentsParser
 		flag_index = args.index(flag)
 		index = flag_index + 1
 		result = []
-		until index > args.count-1 || args[index].include?("-") do
+		while index < args.count and !args[index].start_with?('-')
 			result << args[index]
 			index+=1
 		end

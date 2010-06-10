@@ -1,5 +1,3 @@
-require 'directory_watcher'
-
 class FSnooper
 	
 	attr_accessor :commands, :target_directories
