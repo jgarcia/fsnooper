@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby -w
+
+fsnooper_dir = File.join [File.dirname(__FILE__)'..', 'lib']
+$LOAD_PATH.unshift(fsnooper_dir) unless $LOAD_PATH.include?(fsnooper_dir)
+
+
+require 'arguments_parser'
+require 'directory_watcher'
+require 'fsnooper'
+
+if __FILE__ != nil
+	
+	trap('INT') do
+		puts '\nQuitting...'
+		exit
+	end
+
+	@fsnooper = FSnooper.new ARGV
+
+	loop do
+		@fsnooper.run
+		sleep 3
+	end
+
+end
