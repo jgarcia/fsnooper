@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 
-fsnooper_dir = File.join [File.dirname(__FILE__)'..', 'lib']
+fsnooper_dir = File.join [File.dirname(__FILE__), '..', 'lib']
 $LOAD_PATH.unshift(fsnooper_dir) unless $LOAD_PATH.include?(fsnooper_dir)
 
 
